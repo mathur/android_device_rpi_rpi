@@ -1,3 +1,3 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_rpi.mk
+    $(LOCAL_DIR)/device_rpi.mk
 
