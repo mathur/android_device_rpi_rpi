@@ -59,6 +59,7 @@ TARGET_KERNEL_CONFIG := bcmrpi_defconfig
 TARGET_KERNEL_SOURCE := kernel/rpi/rpi
 
 # Webkit
+ENABLE_WEBGL := true
 JS_ENGINE := v8
 HTTP := chrome
 WITH_JIT := true
