@@ -7,8 +7,6 @@ $(call inherit-product, vendor/cm/config/common.mk)
 # Inherit device configuration
 $(call inherit-product, device/rpi/rpi/device_rpi.mk)
 
-
-
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := rpi
 PRODUCT_NAME := cm_rpi
