@@ -15,4 +15,3 @@ PRODUCT_MODEL := Raspberry Pi
 PRODUCT_MANUFACTURER := rpi
 
 -include vendor/cm/config/common_versions.mk
-
