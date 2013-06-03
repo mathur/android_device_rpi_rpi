@@ -24,9 +24,7 @@
 # variant, so that it gets overwritten by the parent (which goes
 # against the traditional rules of inheritance).
 
-TARGET_GLOBAL_CFLAGS += -mfpu=vfp -mfloat-abi=softfp -Os
-TARGET_GLOBAL_CPPFLAGS += -mfpu=vfp -mfloat-abi=softfp -Os
-
+# Architecture
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv6-vfp
 
@@ -36,14 +34,31 @@ ARCH_ARM_HAVE_VFP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_ARCH_VARIANT_CPU := arm1176jzf-s
 
-TARGET_NO_KERNEL := true
-
+# Audio
 BOARD_USES_GENERIC_AUDIO := false
 BOARD_USES_ALSA_AUDIO := true
 BUILD_WITH_ALSA_UTILS := true
+
+# BT
 BOARD_HAVE_BLUETOOTH := false
+
+# Camera
 USE_CAMERA_STUB := true
 
+# Flags
+TARGET_GLOBAL_CFLAGS += -mfpu=vfp -mfloat-abi=softfp -Os
+TARGET_GLOBAL_CPPFLAGS += -mfpu=vfp -mfloat-abi=softfp -Os
+
+# Kernel
+BOARD_KERNEL_BASE := 0x80400000
+BOARD_KERNEL_PAGE_SIZE := 2048
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8
+BOARD_FORCE_RAMDISK_ADDRESS := 0x81800000
+
+TARGET_KERNEL_CONFIG := bcmrpi_defconfig
+TARGET_KERNEL_SOURCE := kernel/rpi/rpi
+
+# Webkit
 JS_ENGINE := v8
 HTTP := chrome
 WITH_JIT := true
